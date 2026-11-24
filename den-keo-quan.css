@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #172554, #312e81);
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+h1 {
+    color: #facc15;
+    margin-top: 35px;
+    margin-bottom: 12px;
+}
+
+.scene {
+    width: 220px;
+    height: 280px;
+    margin: 130px auto 100px;
+    perspective: 1000px;
+}
+
+.lantern {
+    position: relative;
+    width: 220px;
+    height: 280px;
+    transform-style: preserve-3d;
+    animation: xoayDen 12s linear infinite;
+}
+
+.face {
+    position: absolute;
+    width: 220px;
+    height: 280px;
+    top: 0;
+    left: 0;
+    border: 4px solid #facc15;
+    border-radius: 8px;
+    overflow: hidden;
+    backface-visibility: hidden;
+}
+
+.face img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Xếp 6 ảnh thành 6 mặt của đèn */
+
+.face1 {
+    transform: rotateY(0deg) translateZ(190px);
+}
+
+.face2 {
+    transform: rotateY(60deg) translateZ(190px);
+}
+
+.face3 {
+    transform: rotateY(120deg) translateZ(190px);
+}
+
+.face4 {
+    transform: rotateY(180deg) translateZ(190px);
+}
+
+.face5 {
+    transform: rotateY(240deg) translateZ(190px);
+}
+
+.face6 {
+    transform: rotateY(300deg) translateZ(190px);
+}
+
+/* Hiệu ứng xoay */
+
+@keyframes xoayDen {
+    from {
+        transform: rotateY(0deg);
+    }
+
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+.hint {
+    margin: 20px;
+}
+
+a {
+    display: inline-block;
+    margin: 15px;
+    padding: 12px 22px;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+a:hover {
+    background: #1d4ed8;
+}
